@@ -60,9 +60,11 @@ function validarConfirmacaoSenha() {
     var confirmacaoSenhaErro = document.getElementById("confirmacao-senha-erro");
     if (confirmacaoSenha.value != senha.value) {
         confirmacaoSenha.classList.add("is-invalid");
+        confirmacaoSenhaErro.classList.remove("d-none");
         return false;
     } else {
         confirmacaoSenha.classList.remove("is-invalid");
+        confirmacaoSenhaErro.classList.add("d-none");
         return true;
     }
 }
