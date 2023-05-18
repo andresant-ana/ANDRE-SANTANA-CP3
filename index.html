@@ -20,11 +20,18 @@
         <h1>Formulário de Cadastro</h1>
 
         <form id="form-cadastro" onsubmit="return validarFormulario()">
+
             <div class="form-group">
                 <label for="primeiro-nome">Primeiro nome</label>
                 <input type="text" class="form-control" id="primeiro-nome" placeholder="Digite o seu primeiro nome" oninput="validarPrimeiroNome()">
                 <small id="primeiro-nome-erro" class="form-text text-danger d-none">O primeiro nome deve ter no mínimo 5 caracteres e não pode ser vazio.</small>
             </div>
+
+            <div class="form-group">
+                <label for="segundo-nome">Segundo nome</label>
+                <input type="text" class="form-control" id="segundo-nome" placeholder="Digite o seu segundo nome" oninput="validarSegundoNome()">
+            </div>
+
         </form>
     </div>
 </body>
