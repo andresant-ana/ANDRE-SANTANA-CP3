@@ -17,9 +17,11 @@ function validarSegundoNome() {
     var segundoNomeErro = document.getElementById("segundo-nome-erro");
     if (segundoNome.value.length < 5 || segundoNome.value.trim() == "") {
         segundoNome.classList.add("is-invalid");
+        segundoNomeErro.classList.remove("d-none");
         return false;
     } else {
         segundoNome.classList.remove("is-invalid");
+        segundoNomeErro.classList.add("d-none");
         return true;
     }
 }
