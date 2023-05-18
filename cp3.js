@@ -43,7 +43,7 @@ function validarEmail() {
 function validarSenha() {
     var senha = document.getElementById("senha");
     var senhaErro = document.getElementById("senha-erro");
-    if (senha.value.length < 6) {
+    if (senha.value.length < 6 || senha.value.length > 8 || senha.value.trim() == "") {
         senha.classList.add("is-invalid");
         return false;
     } else {
