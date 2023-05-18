@@ -53,3 +53,16 @@ function validarSenha() {
         return true;
     }
 }
+
+function validarConfirmacaoSenha() {
+    var confirmacaoSenha = document.getElementById("confirmacao-senha");
+    var senha = document.getElementById("senha");
+    var confirmacaoSenhaErro = document.getElementById("confirmacao-senha-erro");
+    if (confirmacaoSenha.value != senha.value) {
+        confirmacaoSenha.classList.add("is-invalid");
+        return false;
+    } else {
+        confirmacaoSenha.classList.remove("is-invalid");
+        return true;
+    }
+}
