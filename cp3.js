@@ -29,7 +29,7 @@ function validarSegundoNome() {
 function validarEmail() {
     var email = document.getElementById("email");
     var emailErro = document.getElementById("email-erro");
-    if (email.value.length < 5) {
+    if (email.value.length < 5 || email.value.trim() == "" || !email.value.includes("@")) {
         email.classList.add("is-invalid");
         return false;
     } else {
