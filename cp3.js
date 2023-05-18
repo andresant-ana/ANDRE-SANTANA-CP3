@@ -45,9 +45,11 @@ function validarSenha() {
     var senhaErro = document.getElementById("senha-erro");
     if (senha.value.length < 6 || senha.value.length > 8 || senha.value.trim() == "") {
         senha.classList.add("is-invalid");
+        senhaErro.classList.remove("d-none");
         return false;
     } else {
         senha.classList.remove("is-invalid");
+        senhaErro.classList.add("d-none");
         return true;
     }
 }
