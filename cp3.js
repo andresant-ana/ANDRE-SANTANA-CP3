@@ -68,3 +68,18 @@ function validarConfirmacaoSenha() {
         return true;
     }
 }
+
+function validarFormulario() {
+    var primeiroNomeValido = validarPrimeiroNome();
+    var segundoNomeValido = validarSegundoNome();
+    var emailValido = validarEmail();
+    var senhaValida = validarSenha();
+    var confirmacaoSenhaValida = validarConfirmacaoSenha();
+    if (primeiroNomeValido && segundoNomeValido && emailValido && senhaValida && confirmacaoSenhaValida) {
+        alert("Cadastro realizado com sucesso!");
+        return true;
+    } else {
+        alert("Por favor, corrija os campos inválidos.");
+        return false;
+    }
+}
