@@ -1,9 +1,13 @@
+var camposInvalidos = [];
+
 function validarPrimeiroNome() {
     var primeiroNome = document.getElementById("primeiro-nome");
     var primeiroNomeErro = document.getElementById("primeiro-nome-erro");
+
     if (primeiroNome.value.length < 5 || primeiroNome.value.trim() == "") {
         primeiroNome.classList.add("is-invalid");
         primeiroNomeErro.classList.remove("d-none");
+        camposInvalidos.push(primeiroNome.name);
         return false;
     } else {
         primeiroNome.classList.remove("is-invalid");
@@ -18,6 +22,7 @@ function validarSegundoNome() {
     if (segundoNome.value.length < 5 || segundoNome.value.trim() == "") {
         segundoNome.classList.add("is-invalid");
         segundoNomeErro.classList.remove("d-none");
+        camposInvalidos.push(segundoNome.name);
         return false;
     } else {
         segundoNome.classList.remove("is-invalid");
@@ -32,6 +37,7 @@ function validarEmail() {
     if (email.value.length < 5 || email.value.trim() == "" || !email.value.includes("@")) {
         email.classList.add("is-invalid");
         emailErro.classList.remove("d-none");
+        camposInvalidos.push(email.name);
         return false;
     } else {
         email.classList.remove("is-invalid");
@@ -46,6 +52,7 @@ function validarSenha() {
     if (senha.value.length < 6 || senha.value.length > 8 || senha.value.trim() == "") {
         senha.classList.add("is-invalid");
         senhaErro.classList.remove("d-none");
+        camposInvalidos.push(senha.name);
         return false;
     } else {
         senha.classList.remove("is-invalid");
@@ -61,6 +68,7 @@ function validarConfirmacaoSenha() {
     if (confirmacaoSenha.value != senha.value) {
         confirmacaoSenha.classList.add("is-invalid");
         confirmacaoSenhaErro.classList.remove("d-none");
+        camposInvalidos.push(confirmacaoSenha.name);
         return false;
     } else {
         confirmacaoSenha.classList.remove("is-invalid");
@@ -70,6 +78,7 @@ function validarConfirmacaoSenha() {
 }
 
 function validarFormulario() {
+    camposInvalidos.splice(0, camposInvalidos.length);
     var primeiroNomeValido = validarPrimeiroNome();
     var segundoNomeValido = validarSegundoNome();
     var emailValido = validarEmail();
@@ -79,7 +88,9 @@ function validarFormulario() {
         alert("Cadastro realizado com sucesso!");
         return true;
     } else {
-        alert("Por favor, corrija os campos inválidos.");
+        var camposLegiveis = camposInvalidos.map(campo => campo.split("-").map(palavra => palavra[0].toUpperCase() + palavra.slice(1)).join(" "));
+        alert("Por favor, corrija os seguintes campos: " + camposLegiveis.join(", "));
         return false;
     }
 }
+
