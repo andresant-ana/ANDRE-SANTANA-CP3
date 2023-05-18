@@ -31,9 +31,11 @@ function validarEmail() {
     var emailErro = document.getElementById("email-erro");
     if (email.value.length < 5 || email.value.trim() == "" || !email.value.includes("@")) {
         email.classList.add("is-invalid");
+        emailErro.classList.remove("d-none");
         return false;
     } else {
         email.classList.remove("is-invalid");
+        emailErro.classList.add("d-none");
         return true;
     }
 }
