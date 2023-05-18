@@ -39,3 +39,15 @@ function validarEmail() {
         return true;
     }
 }
+
+function validarSenha() {
+    var senha = document.getElementById("senha");
+    var senhaErro = document.getElementById("senha-erro");
+    if (senha.value.length < 6) {
+        senha.classList.add("is-invalid");
+        return false;
+    } else {
+        senha.classList.remove("is-invalid");
+        return true;
+    }
+}
