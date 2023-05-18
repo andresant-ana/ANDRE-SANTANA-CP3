@@ -25,3 +25,15 @@ function validarSegundoNome() {
         return true;
     }
 }
+
+function validarEmail() {
+    var email = document.getElementById("email");
+    var emailErro = document.getElementById("email-erro");
+    if (email.value.length < 5) {
+        email.classList.add("is-invalid");
+        return false;
+    } else {
+        email.classList.remove("is-invalid");
+        return true;
+    }
+}
