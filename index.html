@@ -17,43 +17,51 @@
 </head>
 <body>
     <div class="container">
+
         <h1>Formulário de Cadastro</h1>
 
         <form id="form-cadastro" onsubmit="return validarFormulario()">
 
             <div class="form-group">
                 <label for="primeiro-nome">Primeiro nome</label>
-                <input type="text" class="form-control" id="primeiro-nome" placeholder="Digite o seu primeiro nome" oninput="validarPrimeiroNome()">
+                <input type="text" class="form-control" id="primeiro-nome" name="primeiro-nome" placeholder="Digite o seu primeiro nome" oninput="validarPrimeiroNome()">
                 <small id="primeiro-nome-erro" class="form-text text-danger d-none">O primeiro nome deve ter no mínimo 5 caracteres e não pode ser vazio.</small>
             </div>
 
             <div class="form-group">
                 <label for="segundo-nome">Segundo nome</label>
-                <input type="text" class="form-control" id="segundo-nome" placeholder="Digite o seu segundo nome" oninput="validarSegundoNome()">
+                <input type="text" class="form-control" id="segundo-nome" name="segundo-nome" placeholder="Digite o seu segundo nome" oninput="validarSegundoNome()">
                 <small id="segundo-nome-erro" class="form-text text-danger d-none">O segundo nome deve ter no mínimo 5 caracteres e não pode ser vazio.</small>
             </div>
 
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Digite o seu email" oninput="validarEmail()">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Digite o seu email" oninput="validarEmail()">
                 <small id="email-erro" class="form-text text-danger d-none">O email deve ter no mínimo 5 caracteres, não pode ser vazio e deve conter o caractere "@".</small>
             </div>
 
             <div class="form-group">
                 <label for="senha">Senha</label>
-                <input type="password" class="form-control" id="senha" placeholder="Digite a sua senha" oninput="validarSenha()">
-                <small id="confirmacao-senha-erro" class="form-text text-danger d-none">A confirmação de senha deve ser igual à senha.</small>
+                <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite a sua senha" oninput="validarSenha()">
+                <small id="senha-erro" class="form-text text-danger d-none">A senha deve ter no mínimo 6 caracteres e no máximo 8 caracteres e não pode ser vazia.</small>
             </div>
 
             <div class="form-group">
                 <label for="confirmacao-senha">Confirmação de Senha</label>
-                <input type="password" class="form-control" id="confirmacao-senha" placeholder="Digite a sua senha novamente" oninput="validarConfirmacaoSenha()">
+                <input type="password" class="form-control" id="confirmacao-senha" name="confirmacao-senha" placeholder="Digite a sua senha novamente" oninput="validarConfirmacaoSenha()">
                 <small id="confirmacao-senha-erro" class="form-text text-danger d-none">A confirmação de senha deve ser igual à senha.</small>
             </div>
 
             <button type="submit" class="btn btn-primary">Cadastrar</button>
 
+            <div class="botao-dark-mode">
+                <input type="checkbox" id="checkbox-dark-mode" onclick="ativarDarkMode()">
+                <label for="checkbox-dark-mode">Ativar Dark Mode</label>
+            </div>
+
         </form>
+
     </div>
+
 </body>
 </html>

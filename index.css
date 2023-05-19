@@ -1,0 +1,25 @@
+.botao-dark-mode {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+   
+.botao-dark-mode input {
+    display: none;
+}
+   
+.botao-dark-mode label {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 10px;
+}
+   
+.botao-dark-mode label:hover {
+    background-color: #333;
+    color: #fff;
+}
+   
+   
